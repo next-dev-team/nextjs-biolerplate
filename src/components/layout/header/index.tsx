@@ -1,11 +1,13 @@
+import { tw } from '@root/src/utils/styles';
 import Link from 'next/link';
 
 export default function Header() {
+	const activeCls = tw('border-b border-blue-400 text-blue-600');
 	return (
 		<>
 			<header className="bg-white border-b dark:bg-gray-900 dark:border-gray-700 lg:fixed lg:w-full lg:top-0 lg:left-0 lg:z-30">
 				<div className="container px-4 py-4 mx-auto space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-between lg:space-x-10">
-					<div className="flex justify-between">
+					<div className="flex justify-between cursor-pointer">
 						<Link href="/">
 							<div className="flex items-center">
 								<svg
@@ -42,19 +44,12 @@ export default function Header() {
 					</div>{' '}
 					<div className="flex flex-col space-y-4 lg:hidden" style={{ display: 'none' }}>
 						<div className="flex flex-col space-y-3 lg:space-y-0 lg:flex-row lg:space-x-6 xl:space-x-8 lg:items-center">
-							<a
-								href="/"
-								className="text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400"
-							>
-								Home
-							</a>{' '}
-							<a
-								href="/components"
-								className="text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400 lg:hidden"
-							>
-								Components
-							</a>{' '}
-							<div className="relative hidden inline-block lg:block">
+							<Link href="/">
+								<a className="text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400">
+									Home
+								</a>
+							</Link>
+							<div className="relative inline-block lg:block">
 								<div>
 									<button className="flex items-center space-x-1 text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400 focus:outline-none">
 										<span>Components</span>{' '}
@@ -249,16 +244,13 @@ export default function Header() {
 									<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
 								</svg>
 							</button>{' '}
-							<form
-								action="/search"
-								className="flex flex-wrap justify-between md:flex-row"
-							>
+							<form className="flex flex-wrap justify-between md:flex-row">
 								<input
 									type="search"
 									name="query"
 									placeholder="Search"
-									required="required"
-									className="w-full h-12 px-4 text-sm text-gray-700 bg-white border border-gray-200 rounded-lg lg:w-20 xl:transition-all xl:duration-300 xl:w-36 xl:focus:w-44 lg:h-10 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-primary dark:focus:border-primary focus:outline-none focus:ring focus:ring-primary dark:placeholder-gray-400 focus:ring-opacity-20"
+									required
+									className="w-full h-12 px-4 text-sm text-gray-700 bg-white border border-gray-200 rounded-lg lg:w-20 xl:transition-all xl:duration-300 xl:w-36 xl:focus:w-44 lg:h-10 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-200 dark:focus:border-primary focus:outline-none focus:ring focus:ring-blue-200 dark:placeholder-gray-400 focus:ring-opacity-20"
 								/>
 							</form>{' '}
 							<a
@@ -267,7 +259,7 @@ export default function Header() {
 							>
 								Submit <span className="lg:hidden 2xl:inline">&nbsp;new component</span>
 							</a>{' '}
-							<div className="relative hidden inline-block lg:inline-block">
+							<div className="relative inline-block lg:inline-block">
 								<div>
 									<button className="flex items-center space-x-2 focus:outline-none">
 										<img
@@ -359,151 +351,25 @@ export default function Header() {
 					</div>{' '}
 					<div className="hidden lg:flex lg:flex-row lg:items-center lg:justify-between lg:flex-1 lg:space-x-2">
 						<div className="flex flex-col space-y-3 lg:space-y-0 lg:flex-row lg:space-x-6 xl:space-x-8 lg:items-center">
-							<a
-								href="/"
-								className="text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400"
-							>
-								Home
-							</a>{' '}
-							<a
-								href="/components"
-								className="text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400 lg:hidden"
-							>
-								Components
-							</a>{' '}
-							<div className="relative hidden inline-block lg:block">
-								<div>
-									<button className="flex items-center space-x-1 text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400 focus:outline-none">
-										<span>Components</span>{' '}
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											viewBox="0 0 20 20"
-											fill="currentColor"
-											className="w-5 h-5"
-										>
-											<path
-												fillRule="evenodd"
-												d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-												clipRule="evenodd"
-											/>
-										</svg>
-									</button>
-								</div>{' '}
-								{/**/}{' '}
-								<div
-									className="absolute left-0 z-20 py-1 mt-2 bg-white border border-gray-100 rounded-md shadow-xl dark:border-gray-700 lg:left-auto lg:right-0 dark:bg-gray-800"
-									style={{ display: 'none' }}
+							<Link href="/">
+								<a
+									className={tw(
+										'text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400'
+									)}
 								>
-									<div className="w-36">
-										<a
-											href="/components"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											All Components
-										</a>{' '}
-										<a
-											href="/awesome"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											awesome
-										</a>{' '}
-										<a
-											href="/components/alpinejs"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Alpinejs
-										</a>{' '}
-										<a
-											href="/components/buttons"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Buttons
-										</a>{' '}
-										<a
-											href="/components/cards"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Cards
-										</a>{' '}
-										<a
-											href="/components/dropdowns"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Dropdowns
-										</a>{' '}
-										<a
-											href="/components/forms"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Forms
-										</a>{' '}
-										<a
-											href="/components/inputs"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Inputs
-										</a>{' '}
-										<a
-											href="/components/logins"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Logins
-										</a>{' '}
-										<a
-											href="/components/modals"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Modals
-										</a>{' '}
-										<a
-											href="/components/navigations"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Navigations
-										</a>{' '}
-										<a
-											href="/components/pages"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Pages
-										</a>{' '}
-										<a
-											href="/components/selects"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Selects
-										</a>{' '}
-										<a
-											href="/components/tabs"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Tabs
-										</a>{' '}
-										<a
-											href="/components/tables"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Tables
-										</a>{' '}
-										<a
-											href="/components/widget"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Widget
-										</a>
-									</div>
-								</div>
-							</div>{' '}
+									Home
+								</a>
+							</Link>
+							<Link href="/components">
+								<a className="text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400">
+									Components
+								</a>
+							</Link>
 							<a
-								href="/premium"
-								className="text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400"
-							>
-								Premium
-							</a>{' '}
-							<a
-								href="/cheatsheet"
+								href="https://tailwindcss.com/docs/installation"
 								target="_blank"
 								className="text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400"
+								rel="noreferrer"
 							>
 								Cheatsheet
 							</a>{' '}
@@ -574,7 +440,7 @@ export default function Header() {
 									type="search"
 									name="query"
 									placeholder="Search"
-									required="required"
+									required
 									className="w-full h-12 px-4 text-sm text-gray-700 bg-white border border-gray-200 rounded-lg lg:w-20 xl:transition-all xl:duration-300 xl:w-36 xl:focus:w-44 lg:h-10 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-primary dark:focus:border-primary focus:outline-none focus:ring focus:ring-primary dark:placeholder-gray-400 focus:ring-opacity-20"
 								/>
 							</form>{' '}

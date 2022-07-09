@@ -48,6 +48,7 @@ specifiers:
   react-icons: 4.4.0
   sharp: 0.30.7
   standard-version: 9.5.0
+  tailwind-merge: ^1.3.0
   tailwindcss: ^3.1.5
   typescript: 4.7.4
   zustand: 4.0.0-rc.1
@@ -74,6 +75,7 @@ dependencies:
   react-flatpickr: 3.10.13_react@18.2.0
   react-icons: 4.4.0_react@18.2.0
   sharp: 0.30.7
+  tailwind-merge: 1.3.0
   tailwindcss: 3.1.5
   zustand: 4.0.0-rc.1_react@18.2.0
 
@@ -3633,6 +3635,10 @@ packages:
     dependencies:
       function-bind: 1.1.1
 
+  /hashlru/2.3.0:
+    resolution: {integrity: sha512-0cMsjjIC8I+D3M44pOQdsy0OHXGLVz6Z0beRuufhKa0KfaD2wGwAev6jILzXsd3/vpnNQJmWyZtIILqM1N+n5A==}
+    dev: false
+
   /hey-listen/1.0.8:
     resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
     dev: false
@@ -6018,6 +6024,12 @@ packages:
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  /tailwind-merge/1.3.0:
+    resolution: {integrity: sha512-M+DC6DO5eypc3/iOt/oTuqUH68Ip+XCu/Afybg9/ATxUX6KMPk4UGU4z4EMx08BMOBL+iOL93+hx3Jxpb9qNGw==}
+    dependencies:
+      hashlru: 2.3.0
+    dev: false
 
   /tailwindcss/0.0.0-insiders.fe08e91_ugi4xkrfysqkt4c4y6hkyfj344:
     resolution: {integrity: sha512-W8rB1l3I1xEHJGnPGXqzeuq81F+AKGH+sn3c1jiH+Ydp7vyn/KhNr7niwe5e2MA538NUhtqlGL2wOeJlvXD2pw==}

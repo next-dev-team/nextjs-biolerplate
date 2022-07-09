@@ -1,16 +1,17 @@
-import { NextSeo } from 'next-seo';
+import { NextSeo, NextSeoProps } from 'next-seo';
 import { ReactNode } from 'react';
 
 export type IPageLayout = {
 	children: ReactNode;
 	isHasSEO?: boolean;
+	seoProps?: NextSeoProps;
 };
 
 /**
  * PageLayout contain related to SEO and other configuration for page
  */
 export default function PageLayout(props: IPageLayout) {
-	const { children, isHasSEO } = props;
+	const { children, isHasSEO, seoProps } = props;
 	return (
 		<>
 			{/* --------- render head for SEO ----------*/}
@@ -18,6 +19,7 @@ export default function PageLayout(props: IPageLayout) {
 				<NextSeo
 					title={'page title'}
 					description="🦸‍♀️ A super template for Next.js with a pack of incredible tools"
+					{...seoProps}
 				/>
 			)}
 

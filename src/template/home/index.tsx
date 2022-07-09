@@ -7,7 +7,7 @@ import UserSection from './userSection';
 
 const HomeTemplate = () => {
 	return (
-		<Layout>
+		<Layout seoProps={{ title: 'NextJs', description: 'welcome' }}>
 			{/* ---------- UserSection ---------  */}
 			<UserSection />
 			{/* ---------- Other Section goes here ---------  */}

@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss/types').Config} */
 let config = {
-	content: ['./src/{pages,components}/**/*.{js,ts,jsx,tsx}'],
-	darkMode: 'media',
+	content: ['./src/**/*.{js,ts,jsx,tsx}'],
+	darkMode: 'class',
 	plugins: [
 		require('@tailwindcss/forms'),
 		require('@tailwindcss/typography'),

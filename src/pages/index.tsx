@@ -8,7 +8,7 @@ const HomeTemplate = dynamic(() => import('../template/home'));
 
 export default function HomePage(props: { userSsrData: [] }) {
 	// after server get data will set to global store
-	const { setUser, users } = useUserSelector();
+	const { setUser } = useUserSelector();
 	useUpdateStore({ setStoreFn: setUser, asyncData: props?.userSsrData });
 
 	return <HomeTemplate />;

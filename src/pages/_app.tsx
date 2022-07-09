@@ -3,7 +3,6 @@ import { AppProps } from 'next/app';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import 'tailwindcss/tailwind.css';
-import '../styles/navbar.css';
 
 // --- Configs ---
 import SEO from '@root/next-seo.config';
@@ -12,7 +11,7 @@ import { AppLayout } from '../components/layout';
 import { sleepFn } from '../utils/async';
 
 export default function App({ Component, pageProps, router }: AppProps) {
-	const [loading, setLoading] = useState(true);
+	const [loading, setLoading] = useState(false);
 	//Binding events.
 	router.events?.on('routeChangeStart', () => NProgress.start());
 	router.events?.on('routeChangeComplete', () => NProgress.done());
@@ -20,9 +19,10 @@ export default function App({ Component, pageProps, router }: AppProps) {
 
 	// after ssr finish fetching data will show loading
 	useEffect(() => {
+		setLoading(true);
 		if (router?.isReady) {
 			//delay for smooth loading
-			sleepFn(500).then(() => {
+			sleepFn(0).then(() => {
 				setLoading(false);
 			});
 		} else {

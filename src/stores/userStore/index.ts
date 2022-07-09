@@ -1,7 +1,7 @@
 import create from 'zustand';
 
 interface State {
-	users: any[];
+	users: IUserApi.Users;
 	setUser: (userData: any, loading?: boolean) => any;
 }
 

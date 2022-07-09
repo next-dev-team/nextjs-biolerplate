@@ -13,7 +13,7 @@ type ISetAsyncFn = {
 	noLoading?: boolean;
 };
 /**
- * custom client set data to store
+ * custom client set data to store this not re-fetch from api just get trigger data from next srr
  */
 export const useUpdateStore = ({
 	setStoreFn,

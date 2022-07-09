@@ -14,7 +14,8 @@
 				"docs",
 				"chore",
 				"test",
-				"revert"
+				"revert",
+				"wip"
 			]
 		]
 	}
