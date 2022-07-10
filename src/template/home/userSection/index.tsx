@@ -1,5 +1,3 @@
-import { UserCard } from '@root/src/components/cards';
-import { useMemo } from 'react';
 import { useHomeLogic } from '../useHomeLogic';
 
 /**
@@ -15,7 +13,7 @@ const UserSection = () => {
 		const noData = <h1>There is no data</h1>;
 		const userCard = users.map(userItem => {
 			const { name, email } = userItem || {};
-			return <UserCard key={userItem?.name} {...{ position: email, title: name }} />;
+			return <GUserCard key={userItem?.name} {...{ position: email, title: name }} />;
 		});
 
 		return users.length < 1 ? noData : userCard;

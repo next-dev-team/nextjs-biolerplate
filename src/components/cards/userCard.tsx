@@ -3,7 +3,7 @@ export type IUserCard = {
 	position: string;
 };
 
-export const UserCard = ({ title, position }: IUserCard) => {
+const UserCard = ({ title, position }: IUserCard) => {
 	return (
 		<div>
 			<div className="flex flex-col items-center p-8 transition-colors duration-200 transform cursor-pointer group hover:bg-blue-600 rounded-xl">
@@ -66,3 +66,5 @@ export const UserCard = ({ title, position }: IUserCard) => {
 		</div>
 	);
 };
+
+export default UserCard;

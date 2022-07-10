@@ -1,4 +1,3 @@
-import { Layout } from '@root/src/components/layout';
 import UserSection from './userSection';
 
 /**
@@ -7,11 +6,11 @@ import UserSection from './userSection';
 
 const HomeTemplate = () => {
 	return (
-		<Layout seoProps={{ title: 'NextJs', description: 'welcome' }}>
+		<GLayout seoProps={{ title: 'NextJs', description: 'welcome' }}>
 			{/* ---------- UserSection ---------  */}
 			<UserSection />
 			{/* ---------- Other Section goes here ---------  */}
-		</Layout>
+		</GLayout>
 	);
 };
 

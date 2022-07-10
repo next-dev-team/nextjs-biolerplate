@@ -1,5 +1,4 @@
 import { NextSeo, NextSeoProps } from 'next-seo';
-import { ReactNode } from 'react';
 
 export type IPageLayout = {
 	children: ReactNode;

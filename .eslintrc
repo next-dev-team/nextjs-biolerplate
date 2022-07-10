@@ -24,7 +24,8 @@
 		"prettier/prettier": "error",
 		"react/no-children-prop": "off",
 		"no-mixed-operators": ["error", { "allowSamePrecedence": false }],
-		"@next/next/no-img-element": "off"
+		"@next/next/no-img-element": "off",
+		"react/jsx-no-undef": 0
 	},
 	"overrides": [
 		{

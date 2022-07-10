@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
-
 import Dropdown from './dropdown';
 
 const MenuItems = ({ items, depthLevel }) => {

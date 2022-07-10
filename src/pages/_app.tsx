@@ -1,14 +1,8 @@
+import { _configSEO } from '@/utils/library';
 import { DefaultSeo } from 'next-seo';
-import { AppProps } from 'next/app';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import 'tailwindcss/tailwind.css';
-
-// --- Configs ---
-import SEO from '@root/next-seo.config';
-import { useEffect, useState } from 'react';
-import { AppLayout } from '../components/layout';
-import { sleepFn } from '../utils/async';
 
 export default function App({ Component, pageProps, router }: AppProps) {
 	const [loading, setLoading] = useState(false);
@@ -22,7 +16,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
 		setLoading(true);
 		if (router?.isReady) {
 			//delay for smooth loading
-			sleepFn(0).then(() => {
+			_sleepAsync(0).then(() => {
 				setLoading(false);
 			});
 		} else {
@@ -33,10 +27,10 @@ export default function App({ Component, pageProps, router }: AppProps) {
 	return (
 		<div className="relative">
 			{/* --------- AppLayout will be apply all related with layout and logic or init for entire app */}
-			<DefaultSeo {...SEO} />
-			<AppLayout ssrLoading={loading}>
+			<DefaultSeo {..._configSEO} />
+			<GAppLayout ssrLoading={loading}>
 				<Component {...pageProps} key={router?.route} />
-			</AppLayout>
+			</GAppLayout>
 		</div>
 	);
 }

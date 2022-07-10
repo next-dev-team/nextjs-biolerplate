@@ -1,8 +1,8 @@
-import { tw } from '@root/src/utils/styles';
+import { _tw } from '@/utils/styles';
 import Link from 'next/link';
 
 export default function Header() {
-	const activeCls = tw('border-b border-blue-400 text-blue-600');
+	const activeCls = _tw('border-b border-blue-400 text-blue-600');
 	return (
 		<>
 			<header className="bg-white border-b dark:bg-gray-900 dark:border-gray-700 lg:fixed lg:w-full lg:top-0 lg:left-0 lg:z-30">
@@ -353,7 +353,7 @@ export default function Header() {
 						<div className="flex flex-col space-y-3 lg:space-y-0 lg:flex-row lg:space-x-6 xl:space-x-8 lg:items-center">
 							<Link href="/">
 								<a
-									className={tw(
+									className={_tw(
 										'text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400'
 									)}
 								>

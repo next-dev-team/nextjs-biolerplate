@@ -1,7 +1,7 @@
-import useUserStore from './';
+import { _useUserStore } from './userStore';
 
-export const useUserSelector = () => {
-	const { users, setUser } = useUserStore();
+export const _useUserSelector = () => {
+	const { users, setUser } = _useUserStore();
 	return {
 		users,
 		setUser,

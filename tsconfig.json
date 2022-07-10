@@ -16,24 +16,7 @@
 		"jsx": "preserve",
 		"baseUrl": ".",
 		"paths": {
-			"@root/*": ["./*"],
-
-			"@docs/*": ["./public/docs/*"],
-			"@icons/*": ["./public/static/icons/*"],
-			"@images/*": ["./public/static/images/*"],
-			"@sounds/*": ["./public/static/sounds/*"],
-			"@videos/*": ["./public/static/videos/*"],
-
-			"@animations": ["./src/animations"],
-			"@components/*": ["./src/components/*"],
-			"@hooks/*": ["./src/hooks/*"],
-			"@interfaces/*": ["./src/interfaces/*"],
-			"@pages/*": ["./src/pages/*"],
-			"@scripts/*": ["./src/scripts/*"],
-			"@services/*": ["./src/services/*"],
-			"@stores/*": ["./src/stores/*"],
-			"@styles/*": ["./src/styles/*"],
-			"@utils/*": ["./src/utils/*"]
+			"@/*": ["./src/*"]
 		},
 		"incremental": true
 	},
