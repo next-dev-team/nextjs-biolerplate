@@ -12,6 +12,8 @@ declare global {
   const _axiosPost: typeof import('./src/utils/request')['_axiosPost']
   const _axiosPut: typeof import('./src/utils/request')['_axiosPut']
   const _configSEO: typeof import('./src/utils/library')['_configSEO']
+  const _createStore: typeof import('./src/utils/library')['_createStore']
+  const _loggerService: typeof import('./src/services/analytic')['_loggerService']
   const _router: typeof import('./src/utils/library')['_router']
   const _sleepAsync: typeof import('./src/utils/async')['_sleepAsync']
   const _tw: typeof import('./src/utils/styles')['_tw']

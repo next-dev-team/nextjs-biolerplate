@@ -18,6 +18,7 @@
 		"dev": "next dev",
 		"start": "next start",
 		"postbuild": "next-sitemap --config next-sitemap.config.js",
+		"preinstall": "npx only-allow pnpm",
 		"build": "next build",
 		"setup": "pnpm install",
 		"lint": "next lint",
