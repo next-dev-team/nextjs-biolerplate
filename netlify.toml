@@ -1,0 +1,11 @@
+[build]
+base = "/"
+command = "yarn build"
+publish = "/.next"
+
+[[plugins]]
+
+package = "@netlify/plugin-nextjs"
+[build.environment]
+NETLIFY_USE_YARN = "true"
+YARN_VERSION = "1.22.10"
