@@ -56,13 +56,6 @@
 
 ---
 
-<!-- Translations Section -->
-
-## 🌎 Translations
-
-<kbd>[<img title="English" alt="English" src="https://flagicons.lipis.dev/flags/4x3/us.svg" width="22">](./public/docs/translations/README.en-US.md)</kbd>
-<kbd>[<img title="Português Brasileiro" alt="Português Brasileiro" src="https://flagicons.lipis.dev/flags/4x3/br.svg" width="22">](./public/docs/translations/README.pt-BR.md)</kbd>
-
 <!-- Link Demo Section -->
 
 ## 🚀 [Demo →](https://next-plate.vercel.app)
@@ -70,10 +63,10 @@
 Deploy your own copy of this template in just a few clicks!
 
 <div>
- <a href="https://vercel.com/import/project?template=https://github.com/gmatthewsfeuer/next-plate" title="Deploy to Vercel">
+ <a href="https://vercel.com/import/project?template=https://github.com/next-dev-team/nextjs-biolerplate" title="Deploy to Vercel">
   <img src="https://vercel.com/button" alt="Deploy to Vercel" />
  </a>
- <a href="https://app.netlify.com/start/deploy?repository=https://github.com/gmatthewsfeuer/next-plate" title="Deploy to Netlify">
+ <a href="https://app.netlify.com/start/deploy?repository=https://github.com/next-dev-team/nextjs-biolerplate" title="Deploy to Netlify">
   <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
  </a>
  <a href="https://stackblitz.com/fork/github/gmatthewsfeuer/next-plate" title="Open in StackBlitz">
@@ -120,7 +113,7 @@ This project features all the latest tools and good practices in web development
 
 ### Design System and Animations
 
-- 🎨 **[Chakra-UI](https://chakra-ui.com)** – A simple, modular and accessible component library that gives you the building blocks to build your React applications
+- 🎨 **[Tailwind Css](https://tailwindcss.com/)** – A simple, modular and accessible component library that gives you the building blocks to build your React applications
 - 🎞️ **[Framer Motion](https://www.framer.com/motion)** – A production-ready motion library for React
 - ✨ **[React Icons](https://react-icons.github.io/react-icons)** – A collection of popular icons to React projects
 

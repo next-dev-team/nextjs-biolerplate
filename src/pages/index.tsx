@@ -1,3 +1,4 @@
+import { _useUserSelector } from '@/stores/userStore';
 import dynamic from 'next/dynamic';
 
 const HomeTemplate = dynamic(() => import('../template/home'));

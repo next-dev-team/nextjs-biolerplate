@@ -7,6 +7,13 @@ const nextConfig = {
 		formats: ['image/avif', 'image/webp'],
 		domains: ['avatars.githubusercontent.com'],
 	},
+	experimental: {
+		removeConsole: {
+			exclude: ['error'],
+		},
+		// Uncomment this to suppress all logs.
+		// removeConsole: true,
+	},
 	webpack(config) {
 		const autoImport = require('unplugin-auto-import/webpack')({
 			dts: './auto-import.d.ts',
