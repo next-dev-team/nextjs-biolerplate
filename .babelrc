@@ -1,4 +1,14 @@
 {
 	"presets": ["next/babel"],
-	"plugins": []
+	"plugins": [
+		[
+			"import",
+			{
+				"libraryName": "lodash",
+				"libraryDirectory": "",
+				"camel2DashComponentName": false
+			}
+		]
+		// "babel-plugin-react-icons"
+	]
 }

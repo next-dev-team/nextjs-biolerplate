@@ -3,20 +3,28 @@ import { ISideMenu } from '@/components/layout/sideMenu';
 export const useComponent = () => {
 	const menuData: ISideMenu['data'] = [
 		{
-			title: 'Cards1',
-			path: '#card1',
-		},
-		{
-			title: 'Cards2',
-			path: '#card2',
+			title: 'Footer',
+			path: '#footer',
 			children: [
 				{
-					title: 's card 1',
-					path: '#s1',
+					title: 'Footer1',
+					path: '#Footer1',
+					iframeUrl: 'https://www.hyperui.dev/components/marketing/footers',
 				},
 				{
-					title: 's card 2',
-					path: '#s2',
+					title: 'Footer2',
+					path: '#Footer2',
+					iframeUrl: 'https://tailus.io/blocks/footer',
+				},
+				{
+					title: 'Footer3',
+					path: '#Footer3',
+					iframeUrl: 'https://wickedblocks.dev/groups/footer/',
+				},
+				{
+					title: 'Footer4',
+					path: '#Footer4',
+					iframeUrl: 'https://mambaui.com/components/footer',
 				},
 			],
 		},

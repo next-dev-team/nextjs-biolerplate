@@ -2,11 +2,13 @@ import { _useAppSelector } from '@/stores/useAppStore';
 import { _renderActiveSideMenu } from '@/utils/app';
 import { _useRouter } from '@/utils/library';
 import Link from 'next/link';
+import { AiOutlineMenuFold } from 'react-icons/ai';
 
 interface Menus {
 	title: string;
 	path: string;
 	children?: Menus[];
+	iframeUrl?: string;
 }
 
 export type ISideMenu = {
@@ -18,7 +20,7 @@ export type ISideMenu = {
 
 const SubMenu = ({ children = [], title }) => {
 	const { pathname, asPath } = _useRouter();
-	const { activeSideMenuCls, setActiveSideCls } = _useAppSelector();
+	const { setSelectedMenu, setActiveSideCls } = _useAppSelector();
 
 	return (
 		children?.length > 0 && (
@@ -58,29 +60,20 @@ const SubMenu = ({ children = [], title }) => {
 					{children?.map(subMenu1Item => {
 						return (
 							<nav
-								onClick={() => setActiveSideCls(false)}
+								onClick={() => {
+									setSelectedMenu(subMenu1Item?.iframeUrl);
+									setActiveSideCls(false);
+								}}
 								key={subMenu1Item?.title}
 								className={_tw(
-									'mt-1.5 ml-8 flex flex-col',
+									'mt-1.5 ml-8 flex items-center',
 									_renderActiveSideMenu(subMenu1Item?.path, asPath)
 								)}
 							>
+								<AiOutlineMenuFold />
+
 								<Link href={pathname + subMenu1Item?.path}>
 									<a className="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700">
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											className="w-5 h-5 opacity-75"
-											fill="none"
-											viewBox="0 0 24 24"
-											stroke="currentColor"
-											strokeWidth={2}
-										>
-											<path
-												strokeLinecap="round"
-												strokeLinejoin="round"
-												d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
-											/>
-										</svg>
 										<span className="ml-3 text-sm font-medium">
 											{subMenu1Item?.title}
 										</span>

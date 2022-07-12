@@ -1,4 +1,3 @@
-import { _configSEO } from '@/utils/library';
 import { DefaultSeo } from 'next-seo';
 import 'nprogress/nprogress.css';
 import 'tailwindcss/tailwind.css';

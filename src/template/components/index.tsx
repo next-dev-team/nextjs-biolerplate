@@ -6,6 +6,8 @@ import { useComponent } from './useComponents';
 
 const ComponentsTemplate = () => {
 	const { menuData } = useComponent();
+	const { selectedMenu } = _useAppSelector();
+
 	return (
 		<GLayout
 			{...{
@@ -15,7 +17,11 @@ const ComponentsTemplate = () => {
 				},
 			}}
 		>
-			<h1>{_useRouter().pathname}</h1>
+			<iframe
+				width="100%"
+				height="100%"
+				src={selectedMenu || menuData[0].children[0].iframeUrl}
+			></iframe>
 		</GLayout>
 	);
 };
