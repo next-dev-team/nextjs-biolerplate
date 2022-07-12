@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.11.0 (2022-07-12)
+
+
+### Features
+
+* autoimport ([2c173e9](https://github.com/next-dev-team/nextjs-biolerplate/commit/2c173e9df6e5be0ef5c13abdfc810bb5fb180e68))
+* autoimport ([990e8ba](https://github.com/next-dev-team/nextjs-biolerplate/commit/990e8ba8be01ee1d09511cb3797623a88f92bb3d))
+* netlify build ([c059677](https://github.com/next-dev-team/nextjs-biolerplate/commit/c059677a4097b1483688caa0dffba84bfbd7a099))
+
+
+### Improvements
+
+* remove unused code ([68ac753](https://github.com/next-dev-team/nextjs-biolerplate/commit/68ac753818248f80fe8ee6821e7592721d781225))
+
 ## [1.10.0](https://github.com/gmatthewsfeuer/next-plate/compare/v1.9.0...v1.10.0) (2022-05-24)
 
 
