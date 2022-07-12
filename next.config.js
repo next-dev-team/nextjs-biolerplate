@@ -1,4 +1,7 @@
 // const isProduction = process.env.NODE_ENV === 'production';
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+	enabled: process.env.ANALYZE === 'true',
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -7,17 +10,15 @@ const nextConfig = {
 		formats: ['image/avif', 'image/webp'],
 		domains: ['avatars.githubusercontent.com'],
 	},
-	experimental: {
-		removeConsole: {
-			exclude: ['error'],
-		},
-		// Uncomment this to suppress all logs.
-		// removeConsole: true,
-	},
+
 	webpack(config) {
 		const autoImport = require('unplugin-auto-import/webpack')({
 			dts: './auto-import.d.ts',
-			imports: ['react'],
+			imports: [
+				'react',
+				'ahooks',
+				{ 'lodash-es': ['cloneDeep', 'camelCase', 'isPlainObject', 'merge'] },
+			],
 			// Auto import for all module exports under directories
 			// when using in file names mostly use prefixes _ and $ to avoid conflicts
 			dirs: [
@@ -35,4 +36,4 @@ const nextConfig = {
 	},
 };
 
-module.exports = nextConfig;
+module.exports = withBundleAnalyzer(nextConfig);

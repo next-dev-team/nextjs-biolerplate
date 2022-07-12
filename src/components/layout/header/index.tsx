@@ -6,7 +6,7 @@ export default function Header() {
 	return (
 		<>
 			<header className="bg-white border-b dark:bg-gray-900 dark:border-gray-700 lg:fixed lg:w-full lg:top-0 lg:left-0 lg:z-30">
-				<div className="container px-4 py-4 mx-auto space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-between lg:space-x-10">
+				<div className="px-4 py-4 mx-auto space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-between lg:space-x-10">
 					<div className="flex justify-between cursor-pointer">
 						<Link href="/">
 							<div className="flex items-center">
@@ -68,109 +68,6 @@ export default function Header() {
 									</button>
 								</div>{' '}
 								{/**/}{' '}
-								<div
-									className="absolute left-0 z-20 py-1 mt-2 bg-white border border-gray-100 rounded-md shadow-xl dark:border-gray-700 lg:left-auto lg:right-0 dark:bg-gray-800"
-									style={{ display: 'none' }}
-								>
-									<div className="w-36">
-										<a
-											href="/components"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											All Components
-										</a>{' '}
-										<a
-											href="/awesome"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											awesome
-										</a>{' '}
-										<a
-											href="/components/alpinejs"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Alpinejs
-										</a>{' '}
-										<a
-											href="/components/buttons"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Buttons
-										</a>{' '}
-										<a
-											href="/components/cards"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Cards
-										</a>{' '}
-										<a
-											href="/components/dropdowns"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Dropdowns
-										</a>{' '}
-										<a
-											href="/components/forms"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Forms
-										</a>{' '}
-										<a
-											href="/components/inputs"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Inputs
-										</a>{' '}
-										<a
-											href="/components/logins"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Logins
-										</a>{' '}
-										<a
-											href="/components/modals"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Modals
-										</a>{' '}
-										<a
-											href="/components/navigations"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Navigations
-										</a>{' '}
-										<a
-											href="/components/pages"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Pages
-										</a>{' '}
-										<a
-											href="/components/selects"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Selects
-										</a>{' '}
-										<a
-											href="/components/tabs"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Tabs
-										</a>{' '}
-										<a
-											href="/components/tables"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Tables
-										</a>{' '}
-										<a
-											href="/components/widget"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Widget
-										</a>
-									</div>
-								</div>
 							</div>{' '}
 							<a
 								href="/premium"

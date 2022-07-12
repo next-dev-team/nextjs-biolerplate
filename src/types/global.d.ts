@@ -1,4 +1,5 @@
-import type { AppProps as _AppProps, GetStaticProps as _GetStaticProps } from 'next';
+import type { GetStaticProps as _GetStaticProps } from 'next';
+import type { AppProps as _AppProps } from 'next/app';
 import type {
 	CSSProperties as _CSSProperties,
 	DependencyList as _DependencyList,

@@ -33,7 +33,7 @@ export default function AppLayout(props: IAppLayout) {
 
 			<Header />
 			{/* --------- render content/children|slot ----------*/}
-			<div className="container py-24 mx-auto">{children}</div>
+			<div className="py-24 mx-auto">{children}</div>
 		</>
 	);
 }

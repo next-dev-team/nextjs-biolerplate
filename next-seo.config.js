@@ -1,24 +1,24 @@
 /** @type {import('next-seo').DefaultSeoProps} */
 const defaultSEOConfig = {
 	type: 'website',
-	titleTemplate: '%s | Next-Plate',
-	defaultTitle: 'Next-Plate',
+	titleTemplate: '%s | nextjs-boilerplate',
+	defaultTitle: 'nextjs-boilerplate',
 	description: '🦸‍♀️ A super template for Next.js with a pack of incredible tools',
-	canonical: 'https://next-plate.vercel.app',
-	site_name: 'Next-Plate',
+	canonical: 'https://nextjs-boilerplate.vercel.app',
+	site_name: 'nextjs-boilerplate',
 	openGraph: {
-		url: 'https://next-plate.vercel.app',
-		title: 'Next-Plate',
+		url: 'https://nextjs-boilerplate.vercel.app',
+		title: 'nextjs-boilerplate',
 		description: '🦸‍♀️ A super template for Next.js with a pack of incredible tools',
 		images: [
 			{
-				url: 'https://next-plate.vercel.app/static/images/banner.jpg',
+				url: 'https://nextjs-boilerplate.vercel.app/static/images/banner.jpg',
 				width: 512,
 				height: 256,
-				alt: 'Next-Plate Banner Image',
+				alt: 'nextjs-boilerplate Banner Image',
 			},
 		],
-		site_name: 'Next-Plate',
+		site_name: 'nextjs-boilerplate',
 	},
 };
 
