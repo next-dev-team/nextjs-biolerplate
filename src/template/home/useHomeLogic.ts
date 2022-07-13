@@ -1,10 +1,10 @@
-import { _useGithubSelector } from '@/stores/github/selector';
+import { _useGithubSelector } from '@/stores/blog/selector';
 
 /**
  * all related logic for homepage here
  */
 export const useHomeLogic = () => {
-	const { dolphins, incrementAsync } = _useGithubSelector();
+	const blogStore = _useGithubSelector();
 
-	return { dolphins, incrementAsync };
+	return { ...blogStore };
 };

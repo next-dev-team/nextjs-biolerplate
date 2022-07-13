@@ -1,12 +1,18 @@
 import { init } from '@rematch/core';
 import immerPlugin from '@rematch/immer';
 import loading from '@rematch/loading';
-import persist from '@rematch/persist';
-import selectPlugin from '@rematch/select';
-import updated from '@rematch/updated';
+import { default as persistPlugin } from '@rematch/persist';
+import { PersistConfig } from 'redux-persist';
+// import updated from '@rematch/updated';
 import storage from 'redux-persist/lib/storage';
 import { initialStoreState, models, RootModel } from './model';
 import { FullModel, Store } from './type';
+
+const persistConfig: PersistConfig<any> = {
+	key: 'root',
+	storage,
+	whitelist: [],
+};
 
 let store: Store;
 export const initStore = (initialState = initialStoreState) =>
@@ -16,17 +22,12 @@ export const initStore = (initialState = initialStoreState) =>
 			initialState,
 		},
 		plugins: [
-			updated(),
+			// updated(),
 			loading(),
-			persist({
-				key: 'persist-storage',
-				storage,
-				whitelist: [''],
-			}),
 			immerPlugin({
 				whitelist: [''],
 			}),
-			selectPlugin(),
+			persistPlugin(persistConfig),
 		],
 	});
 

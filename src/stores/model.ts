@@ -1,14 +1,14 @@
 import { Models } from '@rematch/core';
-import { dolphins } from './github';
+import { blog } from './blog';
 import { InitialStoreState } from './type';
 
 export interface RootModel extends Models<RootModel> {
-	dolphins: typeof dolphins;
+	blog: typeof blog;
 	// other store model goes here
 }
 
 export const models: RootModel = {
-	dolphins,
+	blog,
 	// other model goes here
 };
 

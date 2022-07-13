@@ -6,10 +6,15 @@ export default HomeTemplate;
 
 export const getStaticProps: GetStaticProps = async (): NextStaticResults => {
 	//only some information related for SEO will fetching here
-	// const allHomeData = await _dispatch.dolphins?.incrementAsync();
+	const allHomeData = await _dispatch.blog.fetchBlog();
+
 	return {
 		props: {
-			allHomeData: { s: 1 },
+			initialStoreState: {
+				blog: {
+					blog: allHomeData.data,
+				},
+			},
 		},
 	};
 };
