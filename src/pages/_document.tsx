@@ -31,10 +31,10 @@ export default class Document extends NextDocument {
 					<link rel="apple-touch-icon" href="/static/icons/icon-32x32.png" />
 					<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
-					<link
+					{/* <link
 						href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
 						rel="stylesheet"
-					/>
+					/> */}
 				</Head>
 				<body>
 					<Main />

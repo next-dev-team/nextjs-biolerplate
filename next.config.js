@@ -17,7 +17,7 @@ const nextConfig = {
 			imports: [
 				'react',
 				'ahooks',
-				{ 'lodash-es': ['cloneDeep', 'camelCase', 'isPlainObject', 'merge'] },
+				{ lodash: ['cloneDeep', 'camelCase', 'isPlainObject', 'merge'] },
 			],
 			// Auto import for all module exports under directories
 			// when using in file names mostly use prefixes _ and $ to avoid conflicts
@@ -28,6 +28,7 @@ const nextConfig = {
 				'./src/api',
 				'./src/services',
 				'./src/components',
+				'./src/constants',
 				// ...
 			],
 		});

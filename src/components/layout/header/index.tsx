@@ -1,444 +1,120 @@
-import { _tw } from '@/utils/styles';
-import Link from 'next/link';
-
 export default function Header() {
-	const activeCls = _tw('border-b border-blue-400 text-blue-600');
 	return (
 		<>
-			<header className="bg-white border-b dark:bg-gray-900 dark:border-gray-700 lg:fixed lg:w-full lg:top-0 lg:left-0 lg:z-30">
-				<div className="px-4 py-4 mx-auto space-y-4 lg:space-y-0 lg:flex lg:items-center lg:justify-between lg:space-x-10">
-					<div className="flex justify-between cursor-pointer">
-						<Link href="/">
-							<div className="flex items-center">
-								<svg
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 25 27"
-									className="flex-shrink-0 -mt-2 h-7 w-7"
+			<Box
+				typeBox="header"
+				className={_tw(
+					'fixed w-full border-b bg-white border-b-gray-200',
+					_cons.mainHeaderCls
+				)}
+			>
+				<div className="flex items-center gap-8 px-4 mx-auto max-w-[3840px] sm:px-6 lg:px-8 h-16">
+					<a className="block text-teal-600" href="/">
+						<span className="sr-only">Home</span>
+						<svg
+							className="h-8"
+							viewBox="0 0 28 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M0.41 10.3847C1.14777 7.4194 2.85643 4.7861 5.2639 2.90424C7.6714 1.02234 10.6393 0 13.695 0C16.7507 0 19.7186 1.02234 22.1261 2.90424C24.5336 4.7861 26.2422 7.4194 26.98 10.3847H25.78C23.7557 10.3549 21.7729 10.9599 20.11 12.1147C20.014 12.1842 19.9138 12.2477 19.81 12.3047H19.67C19.5662 12.2477 19.466 12.1842 19.37 12.1147C17.6924 10.9866 15.7166 10.3841 13.695 10.3841C11.6734 10.3841 9.6976 10.9866 8.02 12.1147C7.924 12.1842 7.8238 12.2477 7.72 12.3047H7.58C7.4762 12.2477 7.376 12.1842 7.28 12.1147C5.6171 10.9599 3.6343 10.3549 1.61 10.3847H0.41ZM23.62 16.6547C24.236 16.175 24.9995 15.924 25.78 15.9447H27.39V12.7347H25.78C24.4052 12.7181 23.0619 13.146 21.95 13.9547C21.3243 14.416 20.5674 14.6649 19.79 14.6649C19.0126 14.6649 18.2557 14.416 17.63 13.9547C16.4899 13.1611 15.1341 12.7356 13.745 12.7356C12.3559 12.7356 11.0001 13.1611 9.86 13.9547C9.2343 14.416 8.4774 14.6649 7.7 14.6649C6.9226 14.6649 6.1657 14.416 5.54 13.9547C4.4144 13.1356 3.0518 12.7072 1.66 12.7347H0V15.9447H1.61C2.39051 15.924 3.154 16.175 3.77 16.6547C4.908 17.4489 6.2623 17.8747 7.65 17.8747C9.0377 17.8747 10.392 17.4489 11.53 16.6547C12.1468 16.1765 12.9097 15.9257 13.69 15.9447C14.4708 15.9223 15.2348 16.1735 15.85 16.6547C16.9901 17.4484 18.3459 17.8738 19.735 17.8738C21.1241 17.8738 22.4799 17.4484 23.62 16.6547ZM23.62 22.3947C24.236 21.915 24.9995 21.664 25.78 21.6847H27.39V18.4747H25.78C24.4052 18.4581 23.0619 18.886 21.95 19.6947C21.3243 20.156 20.5674 20.4049 19.79 20.4049C19.0126 20.4049 18.2557 20.156 17.63 19.6947C16.4899 18.9011 15.1341 18.4757 13.745 18.4757C12.3559 18.4757 11.0001 18.9011 9.86 19.6947C9.2343 20.156 8.4774 20.4049 7.7 20.4049C6.9226 20.4049 6.1657 20.156 5.54 19.6947C4.4144 18.8757 3.0518 18.4472 1.66 18.4747H0V21.6847H1.61C2.39051 21.664 3.154 21.915 3.77 22.3947C4.908 23.1889 6.2623 23.6147 7.65 23.6147C9.0377 23.6147 10.392 23.1889 11.53 22.3947C12.1468 21.9165 12.9097 21.6657 13.69 21.6847C14.4708 21.6623 15.2348 21.9135 15.85 22.3947C16.9901 23.1884 18.3459 23.6138 19.735 23.6138C21.1241 23.6138 22.4799 23.1884 23.62 22.3947Z"
+								fill="currentColor"
+							/>
+						</svg>
+					</a>
+					<div className="flex items-center justify-end flex-1 md:justify-between">
+						<nav className="hidden md:block" aria-labelledby="header-navigation">
+							<h2 className="sr-only" id="header-navigation">
+								Header navigation
+							</h2>
+							<ul className="flex items-center gap-6 text-sm">
+								<li>
+									<a
+										className="font-semibold text-gray-500 transition hover:text-gray-500/75"
+										href="#"
+									>
+										Components
+									</a>
+								</li>
+								<li>
+									<a
+										className="font-semibold text-gray-500 transition hover:text-gray-500/75"
+										href="#"
+									>
+										Careers
+									</a>
+								</li>
+								<li>
+									<a
+										className="font-semibold text-gray-500 transition hover:text-gray-500/75"
+										href="#"
+									>
+										History
+									</a>
+								</li>
+								<li>
+									<a
+										className="font-semibold text-gray-500 transition hover:text-gray-500/75"
+										href="#"
+									>
+										Services
+									</a>
+								</li>
+								<li>
+									<a
+										className="font-semibold text-gray-500 transition hover:text-gray-500/75"
+										href="#"
+									>
+										Projects
+									</a>
+								</li>
+								<li>
+									<a
+										className="font-semibold text-gray-500 transition hover:text-gray-500/75"
+										href="#"
+									>
+										Blog
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<div className="flex items-center gap-4">
+							<div className="sm:gap-4 sm:flex">
+								<a
+									className="block px-5 py-2.5 text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 transition rounded-md"
+									href="#"
 								>
-									<path
-										d="M22.487.658s5.03 13.072-1.822 22.171C16.476 28.39 9.84 27.26 5.484 25.68c1.513-3.391 3.441-6.067 5.784-8.03 1.176.623 3.186.792 6.03.51-2.535-.221-4.284-.654-5.246-1.3l.125.08c2.122-1.546 4.556-2.556 7.303-3.029-3.16-.285-6.026.315-8.598 1.804-.577-.742-1.157-1.748-1.74-3.018.07 1.534.339 2.734.809 3.6-2.64 1.797-4.953 4.58-6.94 8.351a7.583 7.583 0 01-.188-.088c-.802-.358-1.328-1.037-1.755-2.036C-1.9 13.366 4.645 8.273 11.123 7.989 23.046 7.465 22.487.658 22.487.658z"
-										fill="#0ED3CF"
-									/>
-								</svg>{' '}
-								<p className="ml-2 text-xl text-gray-800 dark:text-white">
-									NextJs <strong>TailwindCss</strong>
-								</p>
+									Login
+								</a>
+								<a
+									className="hidden sm:block px-5 py-2.5 text-sm font-medium text-teal-600 bg-gray-100 rounded-md hover:text-teal-600/75 transition"
+									href="/"
+								>
+									Register
+								</a>
 							</div>
-						</Link>
-						<div className="flex items-center space-x-2 lg:hidden">
-							<button className="p-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 focus:bg-gray-100 dark:focus:bg-gray-800 focus:outline-none">
+							<button className="block p-2.5 text-gray-600 transition bg-gray-100 rounded md:hidden hover:text-gray-600/75">
+								<span className="sr-only">Toggle menu</span>
 								<svg
-									viewBox="0 0 20 20"
-									fill="currentColor"
-									className="w-6 h-6 text-gray-700 dark:text-gray-300"
+									xmlns="http://www.w3.org/2000/svg"
+									className="w-5 h-5"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke="currentColor"
+									strokeWidth={2}
 								>
 									<path
-										fillRule="evenodd"
-										d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-										clipRule="evenodd"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										d="M4 6h16M4 12h16M4 18h16"
 									/>
 								</svg>
 							</button>
 						</div>
-					</div>{' '}
-					<div className="flex flex-col space-y-4 lg:hidden" style={{ display: 'none' }}>
-						<div className="flex flex-col space-y-3 lg:space-y-0 lg:flex-row lg:space-x-6 xl:space-x-8 lg:items-center">
-							<Link href="/">
-								<a className="text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400">
-									Home
-								</a>
-							</Link>
-							<div className="relative inline-block lg:block">
-								<div>
-									<button className="flex items-center space-x-1 text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400 focus:outline-none">
-										<span>Components</span>{' '}
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											viewBox="0 0 20 20"
-											fill="currentColor"
-											className="w-5 h-5"
-										>
-											<path
-												fillRule="evenodd"
-												d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-												clipRule="evenodd"
-											/>
-										</svg>
-									</button>
-								</div>{' '}
-								{/**/}{' '}
-							</div>{' '}
-							<a
-								href="/premium"
-								className="text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400"
-							>
-								Premium
-							</a>{' '}
-							<a
-								href="/cheatsheet"
-								target="_blank"
-								className="text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400"
-							>
-								Cheatsheet
-							</a>{' '}
-							<div className="flex flex-col space-y-3 lg:hidden">
-								<a
-									href="/u/rimsila/favorites"
-									className="text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400"
-								>
-									My Favourites
-								</a>{' '}
-								<a
-									href="/u/rimsila/edit"
-									className="text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400"
-								>
-									Edit Profile
-								</a>{' '}
-								<form
-									id="logout-form"
-									action="https://tailwindcomponents.com/logout"
-									method="POST"
-								>
-									<input
-										type="hidden"
-										name="_token"
-										defaultValue="0jLuuo8eZuklwN1GRgqbeLRyM2eL08tMAG5EPvLN"
-									/>{' '}
-									<button className="flex items-center space-x-3 text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400 focus:outline-none">
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											fill="none"
-											viewBox="0 0 24 24"
-											stroke="currentColor"
-											className="w-5 h-5"
-										>
-											<path
-												strokeLinecap="round"
-												strokeLinejoin="round"
-												strokeWidth={2}
-												d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-											/>
-										</svg>{' '}
-										<span>Log Out</span>
-									</button>
-								</form>
-							</div>
-						</div>{' '}
-						<div className="flex flex-col space-y-4 lg:space-y-0 lg:flex-row lg:items-center lg:space-x-4">
-							<button
-								type="button"
-								aria-label="Color Mode"
-								className="flex justify-center p-2 text-gray-500 transition duration-150 ease-in-out bg-gray-100 border border-transparent rounded-md lg:bg-white lg:dark:bg-gray-900 dark:text-gray-200 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50"
-							>
-								{/**/}{' '}
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 20 20"
-									fill="currentColor"
-									className="w-5 h-5 transform -rotate-90"
-								>
-									<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-								</svg>
-							</button>{' '}
-							<form className="flex flex-wrap justify-between md:flex-row">
-								<input
-									type="search"
-									name="query"
-									placeholder="Search"
-									required
-									className="w-full h-12 px-4 text-sm text-gray-700 bg-white border border-gray-200 rounded-lg lg:w-20 xl:transition-all xl:duration-300 xl:w-36 xl:focus:w-44 lg:h-10 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-200 dark:focus:border-primary focus:outline-none focus:ring focus:ring-blue-200 dark:placeholder-gray-400 focus:ring-opacity-20"
-								/>
-							</form>{' '}
-							<a
-								href="/submit-component"
-								className="flex items-center justify-center h-12 px-4 text-sm font-medium text-center text-white transition-colors duration-300 transform rounded-md lg:h-10 bg-primary hover:bg-primary/70"
-							>
-								Submit <span className="lg:hidden 2xl:inline">&nbsp;new component</span>
-							</a>{' '}
-							<div className="relative inline-block lg:inline-block">
-								<div>
-									<button className="flex items-center space-x-2 focus:outline-none">
-										<img
-											src="https://avatars.githubusercontent.com/u/51617383?v=4"
-											alt="rimsila"
-											className="object-cover w-8 h-8 rounded-full xl:w-10 xl:h-10"
-										/>{' '}
-										<span className="font-medium text-gray-800 dark:text-gray-200 lg:hidden">
-											rimsila
-										</span>
-									</button>
-								</div>{' '}
-								{/**/}{' '}
-								<div
-									className="absolute left-0 z-20 py-1 mt-2 bg-white border border-gray-100 rounded-md shadow-xl dark:border-gray-700 lg:left-auto lg:right-0 dark:bg-gray-800"
-									style={{ display: 'none' }}
-								>
-									<div className="w-48">
-										<a
-											href="/u/rimsila"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Signed in as <br /> <span className="font-medium">rimsila</span>
-										</a>{' '}
-										<hr className="border-gray-200 dark:border-gray-700" />{' '}
-										<a
-											href="/u/rimsila"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											My profile
-										</a>{' '}
-										<a
-											href="/u/rimsila/favorites"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											My Favourites
-										</a>{' '}
-										<a
-											href="/u/rimsila/edit"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Edit Profile
-										</a>{' '}
-										<hr className="border-gray-200 dark:border-gray-700" />{' '}
-										<form
-											id="logout-form"
-											action="https://tailwindcomponents.com/logout"
-											method="POST"
-											className="leading-none"
-										>
-											<input
-												type="hidden"
-												name="_token"
-												defaultValue="0jLuuo8eZuklwN1GRgqbeLRyM2eL08tMAG5EPvLN"
-											/>{' '}
-											<button className="flex items-center px-4 py-2 space-x-3 text-sm text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none">
-												<svg
-													xmlns="http://www.w3.org/2000/svg"
-													fill="none"
-													viewBox="0 0 24 24"
-													stroke="currentColor"
-													className="w-4 h-4"
-												>
-													<path
-														strokeLinecap="round"
-														strokeLinejoin="round"
-														strokeWidth={2}
-														d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-													/>
-												</svg>{' '}
-												<span>Log Out</span>
-											</button>
-										</form>
-									</div>
-								</div>
-							</div>{' '}
-							<a
-								href="/u/rimsila"
-								className="inline-flex items-center space-x-2 lg:hidden"
-							>
-								<img
-									src="https://avatars.githubusercontent.com/u/51617383?v=4"
-									alt="rimsila"
-									className="object-cover w-6 h-6 rounded-full"
-								/>{' '}
-								<span className="text-gray-800 dark:text-gray-200">rimsila</span>
-							</a>
-						</div>
-					</div>{' '}
-					<div className="hidden lg:flex lg:flex-row lg:items-center lg:justify-between lg:flex-1 lg:space-x-2">
-						<div className="flex flex-col space-y-3 lg:space-y-0 lg:flex-row lg:space-x-6 xl:space-x-8 lg:items-center">
-							<Link href="/">
-								<a
-									className={_tw(
-										'text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400'
-									)}
-								>
-									Home
-								</a>
-							</Link>
-							<Link href="/components">
-								<a className="text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400">
-									Components
-								</a>
-							</Link>
-							<a
-								href="https://tailwindcss.com/docs/installation"
-								target="_blank"
-								className="text-gray-500 transition-colors duration-300 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400"
-								rel="noreferrer"
-							>
-								Cheatsheet
-							</a>{' '}
-							<div className="flex flex-col space-y-3 lg:hidden">
-								<a
-									href="/u/rimsila/favorites"
-									className="text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400"
-								>
-									My Favourites
-								</a>{' '}
-								<a
-									href="/u/rimsila/edit"
-									className="text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400"
-								>
-									Edit Profile
-								</a>{' '}
-								<form
-									id="logout-form"
-									action="https://tailwindcomponents.com/logout"
-									method="POST"
-								>
-									<input
-										type="hidden"
-										name="_token"
-										defaultValue="0jLuuo8eZuklwN1GRgqbeLRyM2eL08tMAG5EPvLN"
-									/>{' '}
-									<button className="flex items-center space-x-3 text-gray-500 dark:text-gray-200 hover:text-gray-800 dark:hover:text-gray-400 focus:outline-none">
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											fill="none"
-											viewBox="0 0 24 24"
-											stroke="currentColor"
-											className="w-5 h-5"
-										>
-											<path
-												strokeLinecap="round"
-												strokeLinejoin="round"
-												strokeWidth={2}
-												d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-											/>
-										</svg>{' '}
-										<span>Log Out</span>
-									</button>
-								</form>
-							</div>
-						</div>{' '}
-						<div className="flex flex-col space-y-4 lg:space-y-0 lg:flex-row lg:items-center lg:space-x-4">
-							<button
-								type="button"
-								aria-label="Color Mode"
-								className="flex justify-center p-2 text-gray-500 transition duration-150 ease-in-out bg-gray-100 border border-transparent rounded-md lg:bg-white lg:dark:bg-gray-900 dark:text-gray-200 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50"
-							>
-								{/**/}{' '}
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 20 20"
-									fill="currentColor"
-									className="w-5 h-5 transform -rotate-90"
-								>
-									<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-								</svg>
-							</button>{' '}
-							<form
-								action="/search"
-								className="flex flex-wrap justify-between md:flex-row"
-							>
-								<input
-									type="search"
-									name="query"
-									placeholder="Search"
-									required
-									className="w-full h-12 px-4 text-sm text-gray-700 bg-white border border-gray-200 rounded-lg lg:w-20 xl:transition-all xl:duration-300 xl:w-36 xl:focus:w-44 lg:h-10 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-primary dark:focus:border-primary focus:outline-none focus:ring focus:ring-primary dark:placeholder-gray-400 focus:ring-opacity-20"
-								/>
-							</form>{' '}
-							<a
-								href="/submit-component"
-								className="flex items-center justify-center h-12 px-4 text-sm font-medium text-center text-white transition-colors duration-300 transform rounded-md lg:h-10 bg-primary hover:bg-primary/70"
-							>
-								Submit <span className="lg:hidden 2xl:inline">&nbsp;new component</span>
-							</a>{' '}
-							<div className="relative hidden inline-block lg:inline-block">
-								<div>
-									<button className="flex items-center space-x-2 focus:outline-none">
-										<img
-											src="https://avatars.githubusercontent.com/u/51617383?v=4"
-											alt="rimsila"
-											className="object-cover w-8 h-8 rounded-full xl:w-10 xl:h-10"
-										/>{' '}
-										<span className="font-medium text-gray-800 dark:text-gray-200 lg:hidden">
-											rimsila
-										</span>
-									</button>
-								</div>{' '}
-								{/**/}{' '}
-								<div
-									className="absolute left-0 z-20 py-1 mt-2 bg-white border border-gray-100 rounded-md shadow-xl dark:border-gray-700 lg:left-auto lg:right-0 dark:bg-gray-800"
-									style={{ display: 'none' }}
-								>
-									<div className="w-48">
-										<a
-											href="/u/rimsila"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Signed in as <br /> <span className="font-medium">rimsila</span>
-										</a>{' '}
-										<hr className="border-gray-200 dark:border-gray-700" />{' '}
-										<a
-											href="/u/rimsila"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											My profile
-										</a>{' '}
-										<a
-											href="/u/rimsila/favorites"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											My Favourites
-										</a>{' '}
-										<a
-											href="/u/rimsila/edit"
-											className="block px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-										>
-											Edit Profile
-										</a>{' '}
-										<hr className="border-gray-200 dark:border-gray-700" />{' '}
-										<form
-											id="logout-form"
-											action="https://tailwindcomponents.com/logout"
-											method="POST"
-											className="leading-none"
-										>
-											<input
-												type="hidden"
-												name="_token"
-												defaultValue="0jLuuo8eZuklwN1GRgqbeLRyM2eL08tMAG5EPvLN"
-											/>{' '}
-											<button className="flex items-center px-4 py-2 space-x-3 text-sm text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none">
-												<svg
-													xmlns="http://www.w3.org/2000/svg"
-													fill="none"
-													viewBox="0 0 24 24"
-													stroke="currentColor"
-													className="w-4 h-4"
-												>
-													<path
-														strokeLinecap="round"
-														strokeLinejoin="round"
-														strokeWidth={2}
-														d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-													/>
-												</svg>{' '}
-												<span>Log Out</span>
-											</button>
-										</form>
-									</div>
-								</div>
-							</div>{' '}
-							<a
-								href="/u/rimsila"
-								className="inline-flex items-center space-x-2 lg:hidden"
-							>
-								<img
-									src="https://avatars.githubusercontent.com/u/51617383?v=4"
-									alt="rimsila"
-									className="object-cover w-6 h-6 rounded-full"
-								/>{' '}
-								<span className="text-gray-800 dark:text-gray-200">rimsila</span>
-							</a>
-						</div>
 					</div>
 				</div>
-			</header>
+			</Box>
 		</>
 	);
 }

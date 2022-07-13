@@ -1,6 +1,5 @@
 import NProgress from 'nprogress';
 export const useAppTemplate = (props: AppProps) => {
-	console.log('props');
 	const { router } = props || {};
 
 	const [loading, setLoading] = useState(false);

@@ -1,13 +1,14 @@
-import Header from '../header';
-
 export type IAppLayout = {
 	children: ReactNode;
 	ssrLoading?: boolean;
 };
 
+/**
+ * AppLayout wrapper in pages/_app.tsx: mostly use for the whole app logic or share all we need to child pages
+ */
 export default function AppLayout(props: IAppLayout) {
 	const { children, ssrLoading } = props;
-	// common logic or init should be here
+	// common logic hook or init should be here
 	return (
 		<>
 			{ssrLoading && (
@@ -31,9 +32,8 @@ export default function AppLayout(props: IAppLayout) {
 				</div>
 			)}
 
-			<Header />
 			{/* --------- render content/children|slot ----------*/}
-			<div className="py-24 mx-auto">{children}</div>
+			<div className="bg-white app">{children}</div>
 		</>
 	);
 }

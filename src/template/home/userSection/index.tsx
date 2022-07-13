@@ -4,7 +4,7 @@ import { useHomeLogic } from '../useHomeLogic';
  * render only UI the logic state should be in useHomeLogic
  */
 const UserSection = () => {
-	const { users } = useHomeLogic();
+	const { users = [] } = useHomeLogic();
 
 	/**
 	 * render user list
@@ -21,7 +21,7 @@ const UserSection = () => {
 
 	return (
 		<>
-			<section className="container px-6 py-10 mx-auto bg-white dark:bg-gray-900">
+			<section className="container px-6 py-10">
 				{/* ------- render section title ----------- */}
 				<h1 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
 					Our Executive Team

@@ -1,3 +1,4 @@
 import dynamic from 'next/dynamic';
 
-export default dynamic(() => import('../template/components'));
+const ComponentsPage = dynamic(() => import('../template/components'));
+export default ComponentsPage;

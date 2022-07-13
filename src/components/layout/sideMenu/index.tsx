@@ -95,7 +95,7 @@ export default function SideMenu(props: ISideMenu) {
 	const { activeSideMenuCls } = _useAppSelector();
 
 	return (
-		<div className={_tw('flex flex-col h-screen bg-white border-r', fixedMenu)}>
+		<div className={_tw('flex flex-col w-1/6 h-screen bg-white border-r', fixedMenu)}>
 			{data?.map((menuItem, key) => {
 				const { title, children = [], path } = menuItem || {};
 				return (

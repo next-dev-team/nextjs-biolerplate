@@ -13,5 +13,14 @@ declare global {
 	declare type DependencyList = _DependencyList;
 	//next
 	declare type GetStaticProps = _GetStaticProps;
-	declare type AppProps = _AppProps;
+
+	declare type AppProps<P = {}> = Omit<_AppProps<P>, 'pageProps'> & {
+		pageProps: {
+			initialStoreState: Record<string, any>;
+		} & Record<string, any>;
+	};
+	declare type BoxElProps = React.DetailedHTMLProps<
+		React.HTMLAttributes<HTMLDivElement>,
+		HTMLDivElement
+	>;
 }
