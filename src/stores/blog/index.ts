@@ -4,9 +4,9 @@ import type { RootModel } from '../model';
 export const blog = _createModel<RootModel>()({
 	state: {
 		blog: [],
-	},
+	} as BlogState,
 	reducers: {
-		setBlog: (state, payload: any[] = []) => {
+		setBlog: (state, payload: BlogState['blog'] = []) => {
 			return { ...state, blog: payload };
 		},
 	},

@@ -5,7 +5,7 @@
 import { useComponent } from './useComponents';
 
 const ComponentsTemplate = () => {
-	const { menuData } = useComponent();
+	const { menuData, loading } = useComponent();
 	const { selectedMenu } = _useAppSelector();
 
 	return (
@@ -15,13 +15,13 @@ const ComponentsTemplate = () => {
 				sideMenuProps: {
 					data: menuData,
 				},
+				contentCls: 'min-h-screen overflow-hidden',
 			}}
 		>
-			<iframe
-				width="100%"
-				height="100%"
-				src={selectedMenu || menuData[0].children[0].iframeUrl}
-			></iframe>
+			<Box className="relative w-[95vw] h-screen">
+				<GInnerLoading hide={!loading} />
+				<GIframe url={selectedMenu || menuData[0].children[0].iframeUrl} />
+			</Box>
 		</GLayout>
 	);
 };

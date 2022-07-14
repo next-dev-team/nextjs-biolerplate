@@ -8,6 +8,7 @@ export function _useStore(initialState: InitialStoreState) {
 }
 
 export const _store = _initializeStore();
+export const _state = _initializeStore().getState();
 export const _dispatch = _store?.dispatch;
 export const _useDispatch = () => useDispatch<Dispatch>();
 export const _useSelector: TypedUseSelectorHook<RootState> = useSelector;

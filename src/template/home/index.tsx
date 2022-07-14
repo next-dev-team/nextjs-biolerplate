@@ -10,22 +10,6 @@ const HomeTemplate = () => {
 
 	return (
 		<GLayout seoProps={{ title: 'NextJs', description: 'welcome' }}>
-			<button
-				className="px-6 py-4 bg-blue-300"
-				onClick={() => {
-					setBlog([]);
-				}}
-			>
-				{loadingFetchBlog ? 'loading....' : 'clear blog'}
-			</button>
-			<button
-				className="px-6 py-4 bg-blue-300"
-				onClick={() => {
-					fetchBlog();
-				}}
-			>
-				{loadingFetchBlog ? 'loading....' : 'refresh blog'}
-			</button>
 			{/* ---------- UserSection ---------  */}
 			<UserSection />
 		</GLayout>

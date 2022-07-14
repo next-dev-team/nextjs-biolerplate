@@ -1,5 +1,4 @@
 import { NextSeo, NextSeoProps } from 'next-seo';
-import { ComponentProps } from 'react';
 import Box from '../box';
 import SideMenu, { ISideMenu } from '../sideMenu';
 
@@ -8,14 +7,26 @@ export type IPageLayout = {
 	isNoSEO?: boolean;
 	seoProps?: NextSeoProps;
 	sideMenuProps?: Partial<ISideMenu>;
-	footerProps?: ComponentProps<typeof GFooter>;
+	footerProps?: React.ComponentProps<typeof GFooter>;
+	outerCls?: string;
+	headerChildren?: ReactNode;
+	contentCls?: string;
 };
 
 /**
  * PageLayout contain related to SEO and other configuration for page
  */
 export default function PageLayout(props: IPageLayout) {
-	const { children, isNoSEO, seoProps, sideMenuProps, footerProps } = props;
+	const {
+		children,
+		isNoSEO,
+		seoProps,
+		sideMenuProps,
+		outerCls,
+		headerChildren,
+		contentCls,
+		footerProps,
+	} = props;
 
 	const isHasSideMenu = useMemo(
 		() => sideMenuProps?.data?.length > 0,
@@ -23,7 +34,7 @@ export default function PageLayout(props: IPageLayout) {
 	);
 
 	return (
-		<>
+		<Box className={outerCls}>
 			{/* --------- render head for SEO ----------*/}
 			{!isNoSEO && (
 				<NextSeo
@@ -32,9 +43,19 @@ export default function PageLayout(props: IPageLayout) {
 					{...seoProps}
 				/>
 			)}
-			<GHeader />
+			<GHeader>{headerChildren}</GHeader>
 			{/* -------- because of header fixed need to set padding top to the same header height */}
-			<Box className={_tw('flex min-h-screen', 'pt-16')}>
+			<Box
+				className={_tw(
+					'flex min-h-[60vh]',
+					`pt_${
+						headerChildren
+							? _cons.contentPaddingTopFixed + _cons.contentWithSubFixed
+							: _cons.contentPaddingTopFixed
+					}`,
+					contentCls
+				)}
+			>
 				{/* -------- side menu show if sideMenuProps.data has value ----------- */}
 				<Box hide={!isHasSideMenu} className="flex-none w-1/6">
 					<SideMenu {...{ data: [], ...sideMenuProps }} />
@@ -51,7 +72,7 @@ export default function PageLayout(props: IPageLayout) {
 			</Box>
 
 			{/* --------- footer outsize fixed side menu ----------*/}
-			<GFooter hide={isHasSideMenu} />
-		</>
+			<GFooter hide={footerProps?.hide || isHasSideMenu} {...footerProps} />
+		</Box>
 	);
 }

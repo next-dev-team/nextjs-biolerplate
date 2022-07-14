@@ -6,6 +6,7 @@ import { constLayout } from './layout';
  */
 export const _cons = {
 	...constLayout,
+	...envCons,
 
 	// other constant goes here
 };

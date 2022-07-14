@@ -6,8 +6,6 @@ export const _useGithubSelector = () => {
 		setBlog: dispatch.blog.setBlog,
 	}));
 
-	console.log('sila', blog);
-
 	return {
 		...actions,
 		blog: blog.blog.blog,

@@ -7,7 +7,13 @@ interface BlogItemApi {
 	user_updated: string;
 	date_updated: string;
 	title: string;
-	description: string;
+	description?: any;
 	photo: string;
+	shortDesc: string;
+	iframeUrl: string;
 }
 type BlogDataApi = BlogItemApi[];
+
+type BlogState = {
+	blog: BlogDataApi;
+};
