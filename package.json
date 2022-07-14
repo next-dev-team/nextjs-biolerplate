@@ -22,7 +22,6 @@
 		"build:export": "npm run build && next export",
 		"deploy:surge": "surge ./out/ http://nextjs-boilerplate.surge.sh/  && cd ..",
 		"postbuild": "next-sitemap --config next-sitemap.config.js",
-		"setup": "pnpm install",
 		"serve:out": "npx serve out",
 		"clean": "rm -rf .next out",
 		"lint": "next lint",

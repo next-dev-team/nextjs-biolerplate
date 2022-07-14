@@ -1,6 +1,7 @@
 import { init } from '@rematch/core';
 import immerPlugin from '@rematch/immer';
 import loading from '@rematch/loading';
+import updatedPlugin from '@rematch/updated';
 // import updated from '@rematch/updated';
 // import storage from 'redux-persist/lib/storage';
 import { initialStoreState, models, RootModel } from './model';
@@ -20,7 +21,7 @@ export const initStore = (initialState = initialStoreState) =>
 			initialState,
 		},
 		plugins: [
-			// updated(),
+			updatedPlugin(),
 			loading(),
 			immerPlugin({
 				whitelist: [''],

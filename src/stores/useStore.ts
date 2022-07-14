@@ -1,7 +1,6 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { _initializeStore } from './store';
 import { Dispatch, InitialStoreState, RootState } from './type';
-export { createModel as _createModel } from '@rematch/core';
 
 export function _useStore(initialState: InitialStoreState) {
 	const store = useMemo(() => _initializeStore(initialState), [initialState]);

@@ -1,6 +1,8 @@
 import ErrorPage from 'next/error';
 
 export default function Page(props: { examples: false }) {
+	console.log('err page');
+
 	if (props.examples === false) {
 		return <ErrorPage statusCode={404} />;
 	}

@@ -17,4 +17,5 @@ type BlogDataApi = BlogItemApi[];
 type BlogState = {
 	blog: BlogDataApi;
 	selectedComponentIframe: string;
+	isBlogErr: boolean;
 };

@@ -17,6 +17,7 @@ _axiosInstance.interceptors.request.use(
 	},
 	function (error) {
 		// Do something with request error
+
 		return Promise.reject(error);
 	}
 );
@@ -44,22 +45,10 @@ _axiosInstance.interceptors.response.use(
 	function (error) {
 		// Any status codes that falls outside the range of 2xx cause this function to trigger
 		// Do something with response error
-
+		console.log('server error', error);
 		return Promise.reject(error);
 	}
 );
-
-// export const _axiosGet = <Data>(url: string) =>
-// 	_axiosInstance.get<Data, AxiosResponse<Data>>(url);
-
-// export const _axiosPost = <Data>(url: string) =>
-// 	_axiosInstance.post<Data, AxiosResponse<Data>>(url);
-
-// export const _axiosDel = <Data>(url: string) =>
-// 	_axiosInstance.delete<Data, AxiosResponse<Data>>(url);
-
-// export const _axiosPut = <Data>(url: string) =>
-// 	_axiosInstance.put<Data, AxiosResponse<Data>>(url);
 
 type IConfig<T> =
 	| Partial<
@@ -92,7 +81,7 @@ export async function _axios<T>(url = '', config?: IConfig<T>) {
 	} as IConfig<T>;
 
 	const logger = (res: any) => {
-		if (axiosConfig?.isDebug && _cons.isNodeDev) {
+		if (axiosConfig?.isDebug && _envCons?.isNodeDev) {
 			console.log(`request ${urlConfig} success`, res);
 		}
 	};
@@ -123,6 +112,6 @@ export async function _axios<T>(url = '', config?: IConfig<T>) {
 		return resGet;
 	} catch (error) {
 		console.info('request error', error.response);
-		return error as undefined;
+		// return error as undefined;
 	}
 }

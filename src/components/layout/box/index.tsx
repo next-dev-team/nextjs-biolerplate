@@ -1,5 +1,6 @@
 export type IBox = {
 	hide?: boolean;
+	renderShow?: ReactNode;
 	children?: ReactNode;
 	content?: ReactNode;
 	className?: string;
@@ -13,6 +14,7 @@ export default function Box({
 	hide,
 	children,
 	content,
+	renderShow,
 	className,
 	typeBox = 'div',
 	...rest
@@ -23,11 +25,14 @@ export default function Box({
 		...rest,
 	};
 
-	const renderContent = children || content;
+	const renderContent = <>{children || content}</>;
 
 	// if hide will hide element in html
-	if (hide) {
+	if (hide && !renderShow) {
 		return null;
+	}
+	if (renderShow && hide) {
+		return renderContent;
 	}
 
 	// page render base on html structure

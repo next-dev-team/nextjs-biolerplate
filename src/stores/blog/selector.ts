@@ -6,10 +6,12 @@ export const _useGithubSelector = () => {
 		setBlog: dispatch.blog.setBlog,
 		setSelectedComponentIframe: dispatch.blog.setSelectedComponentIframe,
 	}));
+	console.log('blog', blog);
 
 	return {
 		...actions,
 		blog: blog.blog.blog,
+		isBlogErr: blog.blog.isBlogErr,
 		selectedComponentIframe: blog.blog.selectedComponentIframe,
 		loadingFetchBlog: blog?.loading?.effects?.blog?.fetchBlog,
 	};
