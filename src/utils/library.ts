@@ -1,5 +1,4 @@
 import _router, { useRouter as _useRouter } from 'next/router';
-import _createStore from 'zustand';
 import _seoConfig from '../../next-seo.config';
 export { createModel as _createModel } from '@rematch/core';
 /**
@@ -8,4 +7,4 @@ export { createModel as _createModel } from '@rematch/core';
  * other export goes here
  */
 export { default as Link, default as NextLink } from 'next/link';
-export { _router, _useRouter, _seoConfig, _createStore };
+export { _router, _useRouter, _seoConfig };

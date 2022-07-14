@@ -2,11 +2,12 @@
  * render only UI the logic state should be in useHomeLogic
  */
 
+import { _useGithubSelector } from '@/stores/blog/selector';
 import { useComponent } from './useComponents';
 
 const ComponentsTemplate = () => {
 	const { menuData, loading } = useComponent();
-	const { selectedMenu } = _useAppSelector();
+	const { selectedComponentIframe } = _useGithubSelector();
 
 	return (
 		<GLayout
@@ -20,7 +21,7 @@ const ComponentsTemplate = () => {
 		>
 			<Box className="relative w-[95vw] h-screen">
 				<GInnerLoading hide={!loading} />
-				<GIframe url={selectedMenu || menuData[0].children[0].iframeUrl} />
+				<GIframe url={selectedComponentIframe || menuData[0].children[0].iframeUrl} />
 			</Box>
 		</GLayout>
 	);

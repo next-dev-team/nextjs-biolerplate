@@ -9,56 +9,15 @@
 
 <!-- Banner Section -->
 <p align="center">
-  <img src="./public/static/images/banner.jpg" alt="Next-Plate Banner" width="512px" />
+  <img src="./public/static/images/google-light.png" alt="results build" width="512px" />
 </p>
 <h3 align="center">
-  🦸‍♀️ A super template for Next.js with a pack of incredible tools
+  🦸‍♀️ A super template for Next.js you will fast to delivery your projects with fully SEO, hybrid SSG, SSR and bundle size if small
 </h3>
-
----
-
-<!-- Badges Section -->
-<p align="center">
-  <a href="./LICENSE" title="Show the MIT License">
-    <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License MIT">
-  </a>
-  <br>
-  <img src="https://forthebadge.com/images/badges/open-source.svg" alt="Open Source" />
-  <img src="https://forthebadge.com/images/badges/made-with-typescript.svg" alt="Made with TypeScript" />
-  <img src="https://forthebadge.com/images/badges/built-with-love.svg" alt="Built with Love" />
-  <br>
-  <a href="https://vercel.com" title="Open Vercel Website">
-    <img src="./public/static/images/powered-by-vercel.svg" width="175" alt="Powered by Vercel" />
-  </a>
-</p>
-
----
-
-<p align="center">
- <a href="https://sonarcloud.io/summary/new_code?id=gmatthewsfeuer_next-plate">
-   <img src="https://sonarcloud.io/api/project_badges/measure?project=gmatthewsfeuer_next-plate&metric=bugs" alt="Bugs" title="Bugs" />
-   <img src="https://sonarcloud.io/api/project_badges/measure?project=gmatthewsfeuer_next-plate&metric=sqale_rating" alt="Maintainability Rating" title="Maintainability Rating" />
-   <img src="https://sonarcloud.io/api/project_badges/measure?project=gmatthewsfeuer_next-plate&metric=alert_status" alt="Quality Gate Status" title="Quality Gate Status" />
-   <img src="https://sonarcloud.io/api/project_badges/measure?project=gmatthewsfeuer_next-plate&metric=reliability_rating" alt="Reliability Rating" title="Reliability Rating" />
-   <img src="https://sonarcloud.io/api/project_badges/measure?project=gmatthewsfeuer_next-plate&metric=security_rating" alt="Security Rating" title="Security Rating" />
-   <img src="https://sonarcloud.io/api/project_badges/measure?project=gmatthewsfeuer_next-plate&metric=vulnerabilities" alt="Vulnerabilities" title="Vulnerabilities" />
- </a>
- <a href="https://app.renovatebot.com/dashboard">
-   <img src="https://camo.githubusercontent.com/360c8015d9ce49450a3af7d9782f7035ef677763b800bea727b90c37f873433e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656e6f766174652d656e61626c65642d2532333141314636433f6c6f676f3d72656e6f76617465626f74" alt="Renovate" />
- </a>
-</p>
-
-<!-- Desktop/Mobile GIF Demo Section -->
-<div align="center">
-  <img src="./public/docs/demo/demo_desktop.gif" title="Desktop Version" alt="Demo Desktop" width="655px">
-  <img src="./public/docs/demo/demo_mobile.gif" title="Mobile Version" alt="Demo Mobile" height="303px">
-</div>
-
----
 
 <!-- Link Demo Section -->
 
-## 🚀 [Demo →](https://next-plate.vercel.app)
+## 🚀 [Demo →](http://nextjs-boilerplate.surge.sh/)
 
 Deploy your own copy of this template in just a few clicks!
 
@@ -103,29 +62,17 @@ This project features all the latest tools and good practices in web development
 
 ### Data Fetching
 
-- ✳️ **[React Query](https://react-query.tanstack.com)** – Hooks for fetching, caching and updating asynchronous data in React
-- ❇️ **[SWR](https://swr.vercel.app)** (alternative for React Query) – A React Hooks library for data fetching
 - 🔄 **[Axios](https://github.com/axios/axios)** – Promise based HTTP client for the browser and Node.js
 
 ### State Management
 
-- 🐻 **[Zustand](https://zustand-demo.pmnd.rs)** – A small, fast and scalable bearbones state-management solution using simplified flux principles
+- 🐻 **[Rematch js](https://rematchjs.org/)** – A small, fast and scalable state-management less than 2 kilobytes.
 
 ### Design System and Animations
 
 - 🎨 **[Tailwind Css](https://tailwindcss.com/)** – A simple, modular and accessible component library that gives you the building blocks to build your React applications
 - 🎞️ **[Framer Motion](https://www.framer.com/motion)** – A production-ready motion library for React
 - ✨ **[React Icons](https://react-icons.github.io/react-icons)** – A collection of popular icons to React projects
-
-### Form Validation
-
-- 📋 **[React Hook Form](https://react-hook-form.com)** – Performant, flexible and extensible forms with easy-to-use validation
-- 🚨 **[Yup](https://github.com/jquense/yup)** – A schema builder for runtime value parsing and validation
-
-### Tests
-
-- 🃏 **[Jest](https://jestjs.io)** – A delightful JavaScript Testing Framework with a focus on simplicity
-- 🐙 **[Testing Library](https://testing-library.com)** – Simple and complete testing utilities that encourage good testing practices
 
 ### Design Patterns
 
@@ -254,17 +201,6 @@ $ npm run lint:fix
 $ yarn lint:fix
 ```
 
- <h4>Test</h4>
-
-```bash
-# PNPM
-$ pnpm run test # or pnpm run test:watch
-# NPM
-$ npm run test # or npm run test:watch
-# Yarn
-$ yarn test # or yarn test:watch
-```
-
  <h4>Type Checking</h4>
 
 ```bash
@@ -369,30 +305,6 @@ $ yarn pull
 ### ⚙️ Extra Configurations
 
 <details>
- <summary>SWR</summary>
-
- <h4>Swap to SWR</h4>
-
-Install the SWR on the project:
-
-```bash
-# PNPM
-$ pnpm install swr
-# NPM
-$ npm install swr
-# Yarn
-$ yarn add swr
-```
-
-Remove all import lines, providers and code blocks of React Query located in `src/pages/_app.tsx` and `src/pages/[login].tsx`.
-
-That's it! Use the `useFetch` function to fetch your data in the application.
-
-Wanna see a demo? Uncomment all import lines and code blocks of SWR implementation on `src/pages/[login].tsx`.
-
-</details>
-
-<details>
  <summary>Why Did You Render</summary>
 
  <h4>How to Activate</h4>
@@ -453,18 +365,11 @@ See below the file tree to understand the project structure.
 ┃ ┃ ┗ 📂 Motion/                # Chakra + Framer components **
 ┃ ┣ 📂 hooks/                   # React Hooks **
 ┃ ┃ ┗ 📃 useFetch.ts            # SWR fetch hook (optional) **
-┃ ┣ 📂 interfaces/              # TypeScript Interfaces
 ┃ ┣ 📂 pages/                   # App pages
 ┃ ┣ 📂 scripts/                 # Additional scripts **
 ┃ ┃ ┣ 📃 babel.config.js        # Babel config with WDYR **
 ┃ ┃ ┗ 📃 wdyr.ts                # WDYR file **
-┃ ┣ 📂 services/                # Services
-┃ ┃ ┣ 📂 global/
-┃ ┃ ┃ ┗ 📃 api.ts               # AXIOS config
-┃ ┃ ┗ 📂 users/
-┃ ┃   ┣ 📃 index.ts             # React Query Configuration
-┃ ┃   ┗ 📃 keys.ts              # React Query Key
-┃ ┣ 📂 stores/                  # Zustand stores
+┃ ┣ 📂 stores/                  # stores
 ┃ ┣ 📂 styles/                  # Styles folder
 ┃ ┃ ┣ 📃 bgImages.ts            # SVG background images **
 ┃ ┃ ┗ 📃 theme.ts               # Chakra-UI theme
@@ -476,8 +381,6 @@ See below the file tree to understand the project structure.
 ┣ 📃 .gitignore                 # Git ignore
 ┣ 📃 .versionrc                 # Versioning config
 ┣ 📃 .commitlintrc              # Commitlint config
-┣ 📃 jest.config.js             # Jest config
-┣ 📃 jest.setup.js              # Jest setup
 ┣ 📃 LICENSE                    # License of the project
 ┣ 📃 next-env.d.ts              # Next.js types to TypeScript
 ┣ 📃 next-seo.config.js         # Next-SEO config
@@ -485,17 +388,10 @@ See below the file tree to understand the project structure.
 ┣ 📃 next.config.js             # Next.js config
 ┣ 📃 .prettierrc                # Prettier config
 ┣ 📃 README.md                  # Main README
-┣ 📃 renovate.json              # Renovate Bot config **
 ┣ 📃 tsconfig.json              # TypeScript config
 ```
 
 </details>
-
-<!-- License Section -->
-
-## 📜 License
-
-Although you don't have to, if you reuse this template for your projects I would appreciate it if you would **credit me and provide a link to my GitHub profile in the footer of your project**. Thanks!
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) page for details.
 
@@ -506,9 +402,3 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ### ⭐ Give a star to maintain this project!
 
 ### ❤️ Thanks for your attention!
-
-### 👨‍💻 Good Hacking!
-
----
-
-[!["Buy Me A Coffee"](https://cdn.buymeacoffee.com/buttons/default-red.png)](https://www.buymeacoffee.com/gmatthewsfeuer)

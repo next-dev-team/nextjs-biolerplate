@@ -1,12 +1,10 @@
-import { _useAppSelector } from '@/stores/useAppStore';
-import { _renderActiveSideMenu } from '@/utils/app';
-import { _useRouter } from '@/utils/library';
+import { _useGithubSelector } from '@/stores/blog/selector';
 import Link from 'next/link';
 import { AiOutlineMenuFold } from 'react-icons/ai';
 
 interface Menus {
 	title: string;
-	path: string;
+	path?: string;
 	children?: Menus[];
 	iframeUrl?: string;
 }
@@ -18,9 +16,9 @@ export type ISideMenu = {
 	isDefaultActiveFirstMenu?: boolean;
 };
 
-const SubMenu = ({ children = [], title }) => {
+const SubMenu = ({ children = [], title }: Menus) => {
 	const { pathname, asPath } = _useRouter();
-	const { setSelectedMenu, setActiveSideCls } = _useAppSelector();
+	const { setSelectedComponentIframe } = _useGithubSelector();
 
 	return (
 		children?.length > 0 && (
@@ -61,8 +59,7 @@ const SubMenu = ({ children = [], title }) => {
 						return (
 							<nav
 								onClick={() => {
-									setSelectedMenu(subMenu1Item?.iframeUrl);
-									setActiveSideCls(false);
+									setSelectedComponentIframe(subMenu1Item?.iframeUrl);
 								}}
 								key={subMenu1Item?.title}
 								className={_tw(
@@ -91,20 +88,19 @@ const SubMenu = ({ children = [], title }) => {
 export default function SideMenu(props: ISideMenu) {
 	const { isFixed = true, data, isShowFooter, isDefaultActiveFirstMenu = true } = props;
 	const fixedMenu = useMemo(() => isFixed && 'fixed', [isFixed]);
-	const { pathname, asPath } = _useRouter();
-	const { activeSideMenuCls } = _useAppSelector();
+	const { pathname } = _useRouter();
 
 	return (
 		<div className={_tw('flex flex-col w-1/6 h-screen bg-white border-r', fixedMenu)}>
-			{data?.map((menuItem, key) => {
+			{data?.map(menuItem => {
 				const { title, children = [], path } = menuItem || {};
 				return (
 					<div key={title} className="px-4 pb-6">
 						{/* <span className="block w-32 h-10 bg-gray-200 rounded-lg" /> */}
 						<nav
 							className={_tw(
-								'flex flex-col space-y-1',
-								activeSideMenuCls && _renderActiveSideMenu(path, asPath, key)
+								'flex flex-col space-y-1'
+								// activeSideMenuCls && _renderActiveSideMenu(path, asPath, key)
 							)}
 						>
 							{children?.length < 1 && (
@@ -142,23 +138,24 @@ export default function SideMenu(props: ISideMenu) {
 				);
 			})}
 
-			{isShowFooter && (
-				<div className="absolute inset-x-0 border-t border-gray-100 bottom-24">
-					<a href="" className="flex items-center p-4 bg-white hover:bg-gray-50 shrink-0">
-						<img
-							className="object-cover w-10 h-10 rounded-full"
-							src="https://www.hyperui.dev/photos/man-4.jpeg"
-							alt="Simon Lewis"
-						/>
-						<div className="ml-1.5">
-							<p className="text-xs">
-								<strong className="block font-medium">Simon Lewis</strong>
-								<span> simonlewis@fakemail.com </span>
-							</p>
-						</div>
-					</a>
-				</div>
-			)}
+			<Box
+				hide={!isShowFooter}
+				className="absolute inset-x-0 border-t border-gray-100 bottom-24"
+			>
+				<a href="" className="flex items-center p-4 bg-white hover:bg-gray-50 shrink-0">
+					<img
+						className="object-cover w-10 h-10 rounded-full"
+						src="https://www.hyperui.dev/photos/man-4.jpeg"
+						alt="Simon Lewis"
+					/>
+					<div className="ml-1.5">
+						<p className="text-xs">
+							<strong className="block font-medium">Simon Lewis</strong>
+							<span> simonlewis@fakemail.com </span>
+						</p>
+					</div>
+				</a>
+			</Box>
 		</div>
 	);
 }

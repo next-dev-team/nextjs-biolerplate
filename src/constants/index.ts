@@ -10,3 +10,6 @@ export const _cons = {
 
 	// other constant goes here
 };
+
+// env
+export const _envCons = envCons;

@@ -92,7 +92,7 @@ export async function _axios<T>(url = '', config?: IConfig<T>) {
 	} as IConfig<T>;
 
 	const logger = (res: any) => {
-		if (axiosConfig?.isDebug) {
+		if (axiosConfig?.isDebug && _cons.isNodeDev) {
 			console.log(`request ${urlConfig} success`, res);
 		}
 	};
