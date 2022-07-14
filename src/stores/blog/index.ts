@@ -1,4 +1,3 @@
-import { _axios } from '@/utils/request';
 import type { RootModel } from '../model';
 
 export const blog = _createModel<RootModel>()({

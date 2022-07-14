@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
 
 export const _axiosInstance = axios.create({
-	baseURL: 'http://128.199.182.80:8055/items',
+	baseURL: _envCons.blogCmsApiUrl,
 });
 
 _axiosInstance.interceptors.request.use(

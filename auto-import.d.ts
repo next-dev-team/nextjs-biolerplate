@@ -20,7 +20,7 @@ declare global {
   const _axiosPost: typeof import('./src/utils/request')['_axiosPost']
   const _axiosPut: typeof import('./src/utils/request')['_axiosPut']
   const _cons: typeof import('./src/constants/index')['_cons']
-  const _createModel: typeof import('./src/utils/library')['_createModel']
+  const _createModel: typeof import('./src/stores/useStore')['_createModel']
   const _dispatch: typeof import('./src/stores/useStore')['_dispatch']
   const _envCons: typeof import('./src/constants/index')['_envCons']
   const _initializeStore: typeof import('./src/stores/store')['_initializeStore']
