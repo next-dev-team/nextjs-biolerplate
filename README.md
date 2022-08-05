@@ -60,6 +60,8 @@ This project features all the latest tools and good practices in web development
 
 - ⚛️ **[Next.js](https://nextjs.org)** – A complete React framework for hybrid and server rendering
 
+- On Demand unplug autoimport & icons
+
 ### Data Fetching
 
 - 🔄 **[Axios](https://github.com/axios/axios)** – Promise based HTTP client for the browser and Node.js

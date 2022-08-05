@@ -3,8 +3,9 @@
 		"aaron-bond.better-comments",
 		"streetsidesoftware.code-spell-checker",
 		"mikestead.dotenv",
-		"EditorConfig.EditorConfig",
-		"DavidAnson.vscode-markdownlint",
+		"editorconfig.editorconfig",
+		"davidanson.vscode-markdownlint",
 		"esbenp.prettier-vscode",
+		"afzalsayed96.icones"
 	],
 }

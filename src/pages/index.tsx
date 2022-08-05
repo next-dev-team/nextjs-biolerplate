@@ -6,7 +6,7 @@ export default HomeTemplate;
 
 export const getStaticProps: GetStaticProps = async (ctx): NextStaticResults => {
 	//only some information related for SEO will fetching here
-	const allHomeData = await _dispatch.blog.fetchBlog();
+	const allHomeData = { data: [] };
 
 	return {
 		props: {
